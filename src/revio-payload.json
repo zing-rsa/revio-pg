@@ -1,0 +1,20 @@
+{
+    "client": {
+        "email": "kritz.rob@gmail.com",
+        "full_name": "Rob Kritzinger",
+        "country": "ZA"
+    },
+    "purchase": {
+        "currency": "ZAR",
+        "products": [
+            {
+                "name": "my product",
+                "price": 1000
+            }
+        ]
+    },
+    "brand_id": "4e180741-d4b0-4f84-bb10-ca2d010aeaa7",
+    "success_redirect": "http://localhost:3000/success",
+    "failure_redirect": "http://localhost:3000/fail",
+    "send_receipt": true
+}
