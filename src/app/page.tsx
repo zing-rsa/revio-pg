@@ -6,6 +6,7 @@ import { useCallback } from 'react'
 
 import Button from '@/components/button';
 import { PayResponse } from './types'
+import styles from './styles.module.css';
 import api from '../api'
 
 export default function Home() {
@@ -26,6 +27,9 @@ export default function Home() {
     }, []);
 
     return (
-        <Button cb={pay}></Button>
+        <div className={styles.container}>
+            <Button cb={pay} text={'Pay'}></Button>
+            <Button cb={pay} text={'Pay custom'}></Button>
+        </div>
     )
 }
