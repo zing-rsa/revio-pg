@@ -6,14 +6,14 @@ import { useCallback } from 'react'
 
 import Button from '@/components/button';
 import { PayResponse } from './types'
-import styles from './styles.module.css';
 import api from '../api'
+import './main.css'
 
 export default function Home() {
 
     const router = useRouter();
 
-    const pay = useCallback(async () => {
+    const checkout = useCallback(async () => {
 
         console.log('getting url')
         const res: AxiosResponse<PayResponse> = await api({
@@ -26,10 +26,21 @@ export default function Home() {
         console.log('redirected')
     }, []);
 
+    
+    const checkoutCustom = useCallback(async () => {
+
+        const res: AxiosResponse<PayResponse> = await api({
+            method: "GET",
+            url: "pay"
+        });
+
+        router.push(`/checkout?id=${res.data.checkout_url.split('/')[res.data.checkout_url.split('/').length-2]}`);
+    }, []);
+
     return (
-        <div className={styles.container}>
-            <Button cb={pay} text={'Pay'}></Button>
-            <Button cb={pay} text={'Pay custom'}></Button>
+        <div className="container">
+            <Button cb={checkout} text={'Checkout'}></Button>
+            <Button cb={checkoutCustom} text={'Checkout custom'}></Button>
         </div>
     )
 }
