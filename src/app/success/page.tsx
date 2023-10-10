@@ -1,3 +1,5 @@
+import './success.css'
+
 export default function Success() {
-    return <div>Payment success</div>
+    return <div className='success-page'>Payment success</div>
 }
