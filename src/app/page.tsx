@@ -38,9 +38,12 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="container">
-            <Button cb={checkout} text={'Checkout'}></Button>
-            <Button cb={checkoutCustom} text={'Checkout custom'}></Button>
+        <div className="main-page">
+            <div className="container">
+                <Button cb={checkout} text={'Checkout'}></Button>
+                <Button cb={checkoutCustom} text={'Checkout custom'}></Button>
+            </div>
+
         </div>
     )
 }
